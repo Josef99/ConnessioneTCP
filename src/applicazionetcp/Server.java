@@ -27,12 +27,13 @@ public class Server {
         try
         {
             System.out.println("1 SERVER partito in esecuzione ...");
-            server = new ServerSocket(814); //creo un server
+            server = new ServerSocket(815); //creo un server
             client = server.accept(); //rimane in attesa di un client
             server.close();
             
             inDalClient = new BufferedReader (new InputStreamReader (client.getInputStream()));
             outVersoClient = new DataOutputStream(client.getOutputStream());
+	    }
             catch (Exception e){
                     System.out.println(e.getMessage());
                     System.out.println("Errore durante l'istanza del server !");
@@ -40,22 +41,22 @@ public class Server {
                     }
                 return client;
         }
-      public comunica()
+      public void comunica()
               {
                   try
                       {
                           System.out.println("3 benvenuto client, scrivi una frase e la trasformo in maiuscolo. Attendo...");
                           stringaRicevuta = inDalClient.readLine();
-                          System.out.println("6 ricevuta la stringa dal cliente : "stringaRicevuta);
+                          System.out.println("6 ricevuta la stringa dal cliente : "+stringaRicevuta);
                           
                           stringaModificata=stringaRicevuta.toUpperCase();
                           System.out.println("7 invio la stringa modificata al client...");
                           outVersoClient.writeBytes(stringaModificata+'\n');
                           
                           System.out.println("9 server: fine elaborazione ...buona notte!");
-                          client.close(1);
+                          client.close();
                       }
               }
     }
             
-}
+

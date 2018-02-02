@@ -15,7 +15,7 @@ public class mainServer {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-		ServerStr servitore = new ServerStr();
+		Server servitore = new Server();
 		servitore.attendi();
                 servitore.comunica();
 	}

@@ -15,9 +15,9 @@ public class mainClient {
 	 * @param args the command line arguments
 	 */
 	public static void main(String[] args) {
-		ClientStr cliente = new ClientStr();
-		servitore.attendi();
-                servitore.comunica();
+		Client cliente = new Client();
+		cliente.connetti();
+                cliente.comunica();
 	}
 	
 }
